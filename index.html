@@ -3,65 +3,102 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Jordan Chambers, software developer and AI/ML researcher working on trustworthy RAG systems for scientific computing.">
-    <title>Jordan Chambers</title>
+    <meta name="description" content="README for a software developer and AI/ML researcher working on trustworthy RAG systems for scientific computing.">
+    <title>README / Jordan Chambers</title>
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <header class="site-header">
-      <p class="site-title"><a href="index.html">Jordan Chambers</a></p>
-      <nav class="nav" aria-label="Primary navigation">
-        <a href="index.html" aria-current="page">About</a>
-        <a href="research.html">Research</a>
-        <a href="projects.html">Projects</a>
-        <a href="work.html">Client work</a>
-        <a href="https://github.com/jorbers">GitHub</a>
-      </nav>
-    </header>
+    <aside class="navigator" id="navigator" aria-label="File tree">
+      <header class="navigator-header">
+        <a class="workspace-name" href="index.html">jorbers.github.io</a>
+        <button class="icon-button sidebar-toggle" type="button" aria-label="Collapse file tree" aria-controls="navigator">
+          <span aria-hidden="true">|</span>
+        </button>
+      </header>
 
-    <main>
-      <section class="page">
-        <p class="kicker">Vegas-born, Utah-trained. Software development, AI evaluation, scientific computing.</p>
-        <h1>Trust is not a vibe. It is something you measure.</h1>
-        <p class="lede">
-          Jordan Chambers is a Master of Software Development graduate working on retrieval-augmented generation systems for scientific computing at the University of Utah.
-        </p>
-
-        <div class="thesis">
-          <p>
-            The throughline in Jordan's work is trust: not as a philosophical abstraction, but as an engineering property that has to be tested, instrumented, and made visible.
-          </p>
-        </div>
-
-        <p>
-          Her path into software began in psychology, where she was drawn to the question of whether decision-making systems can actually be trusted. Psychology offered the question, but not always the ground truth. Code gave her a harder surface to test against.
-        </p>
-        <p>
-          The move was less a pivot than a change in tools. Her MSD capstone applied machine learning to anomaly detection in behavioral activity logs, using supervised models, forecast models, rules, and anomaly detection to ask a practical version of the same question: when a system flags risk, how do we know whether that signal deserves attention?
-        </p>
-        <p>
-          Jordan's current research carries that standard into agentic AI and LLM-based systems. The present proving ground is RAG for scientific codebases, where retrieval quality can be evaluated against source code, mathematical context, and executable behavior. If the system cannot show its work, measure its limits, and survive evaluation, she does not treat it as trustworthy.
-        </p>
-
-        <section class="split section" aria-labelledby="focus-heading">
-          <div>
-            <h2 id="focus-heading">Current focus</h2>
-            <p>
-              Jordan is especially interested in teams building agentic systems, retrieval-augmented generation, AI evaluation, and scientific computing tools where correctness matters more than polish. Her work sits between research and engineering: define the failure mode, build the harness, evaluate the system, then improve the parts that actually moved the metric.
-            </p>
+      <nav class="tree">
+        <div class="tree-group">
+          <div class="tree-item">
+            <a class="tree-link root-file active" href="index.html">
+              <span class="file-icon">md</span>
+              <span>README</span>
+            </a>
           </div>
-          <aside class="note">
-            <p>
-              Relevant areas: RAG evaluation, code retrieval, scientific software, anomaly detection, behavioral data, agentic AI, measurement-first engineering.
-            </p>
-          </aside>
-        </section>
-      </section>
-    </main>
+          <div class="tree-item">
+            <details open>
+              <summary><span class="folder-icon"></span>Research</summary>
+              <div class="tree-group">
+                <div class="tree-item"><a class="tree-link" href="research.html#rag-work">scientific-codebase-rag.md</a></div>
+                <div class="tree-item"><a class="tree-link" href="research.html#capstone">insider-threat-capstone.md</a></div>
+              </div>
+            </details>
+          </div>
+          <div class="tree-item">
+            <details open>
+              <summary><span class="folder-icon"></span>Work</summary>
+              <div class="tree-group">
+                <div class="tree-item"><a class="tree-link" href="wanderlust-lv.html">wanderlust-lv.md</a></div>
+                <div class="tree-item"><a class="tree-link" href="50-shades-of-green.html">50-shades-of-green.md</a></div>
+                <div class="tree-item"><a class="tree-link" href="enhanced-medical-billing.html">enhanced-medical-billing.md</a></div>
+              </div>
+            </details>
+          </div>
+          <div class="tree-item">
+            <details open>
+              <summary><span class="folder-icon"></span>Projects</summary>
+              <div class="tree-group">
+                <div class="tree-item"><a class="tree-link" href="projects.html#scientific-rag">scientific-codebase-rag.md</a></div>
+                <div class="tree-item"><a class="tree-link" href="projects.html#insider-threat">insider-threat-capstone.md</a></div>
+                <div class="tree-item"><a class="tree-link" href="projects.html#tlslite">tls-lite-java.md</a></div>
+                <div class="tree-item"><a class="tree-link" href="projects.html#dns-resolver">dns-resolver.md</a></div>
+                <div class="tree-item"><a class="tree-link" href="projects.html#cosmic-cat">cosmic-cat-combat.md</a></div>
+              </div>
+            </details>
+          </div>
+        </div>
+      </nav>
 
-    <footer class="site-footer">
-      <p>Jordan Chambers / <a href="https://github.com/jorbers">github.com/jorbers</a></p>
-      <p>Built as a plain HTML and CSS portfolio for GitHub Pages.</p>
-    </footer>
+      <footer class="navigator-footer">
+        <a href="https://github.com/jorbers">github.com/jorbers</a>
+      </footer>
+    </aside>
+
+    <section class="file">
+      <header class="file-header">
+        <button class="icon-button sidebar-toggle title-sidebar-button" type="button" aria-label="Toggle file tree" aria-controls="navigator">
+          <span aria-hidden="true">||</span>
+        </button>
+        <h1>README</h1>
+        <a class="header-link" href="https://github.com/jorbers">GitHub</a>
+      </header>
+
+      <main class="document">
+        <div class="line-rail" aria-hidden="true"></div>
+        <article class="content-area">
+          <p class="eyebrow">README.md</p>
+
+          <p>Vegas-born, Utah-trained developer with a background in psychology and behavior analysis.</p>
+
+          <p>I started in psychology. After undergrad I spent time doing behavior analysis — which is where I learned to care a lot about whether a system that claims to be working is actually working.</p>
+
+          <p>The move to software wasn't really a pivot. The question I was chasing in psych (can the system making decisions actually be trusted to make them?) turned out to be the same question that matters most in software. So now I build and evaluate systems with that question front and center. If I can't measure whether it's working, I don't trust that it is.</p>
+
+          <hr>
+
+          <p>My MSD capstone was ML-based anomaly detection on enterprise activity logs. The hard part wasn't the model — it was making the system explain itself instead of handing an analyst a mysterious score. That's what pushed me toward RAG.</p>
+
+          <p>I'm currently researching retrieval-augmented generation for scientific computing at the University of Utah — if the system is going to answer for something, it should be able to back it up.</p>
+
+          <p>Say hi: <a href="mailto:jmakchambers@gmail.com">jmakchambers@gmail.com</a></p>
+        </article>
+      </main>
+
+      <footer class="content-footer">
+        <span>dark document viewer</span>
+        <span>README</span>
+      </footer>
+    </section>
+
+    <script src="site.js"></script>
   </body>
 </html>

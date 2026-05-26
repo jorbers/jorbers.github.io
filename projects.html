@@ -3,136 +3,160 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Selected GitHub projects by Jordan Chambers.">
+    <meta name="description" content="Selected GitHub projects from public READMEs.">
     <title>Projects / Jordan Chambers</title>
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <header class="site-header">
-      <p class="site-title"><a href="index.html">Jordan Chambers</a></p>
-      <nav class="nav" aria-label="Primary navigation">
-        <a href="index.html">About</a>
-        <a href="research.html">Research</a>
-        <a href="projects.html" aria-current="page">Projects</a>
-        <a href="work.html">Client work</a>
-        <a href="https://github.com/jorbers">GitHub</a>
+    <aside class="navigator" id="navigator" aria-label="File tree">
+      <header class="navigator-header">
+        <a class="workspace-name" href="index.html">jorbers.github.io</a>
+        <button class="icon-button sidebar-toggle" type="button" aria-label="Collapse file tree" aria-controls="navigator"><span aria-hidden="true">|</span></button>
+      </header>
+
+      <nav class="tree">
+        <div class="tree-group">
+          <div class="tree-item"><a class="tree-link root-file" href="index.html"><span class="file-icon">md</span><span>README</span></a></div>
+          <div class="tree-item">
+            <details open>
+              <summary><span class="folder-icon"></span>Research</summary>
+              <div class="tree-group">
+                <div class="tree-item"><a class="tree-link" href="research.html#rag-work">scientific-codebase-rag.md</a></div>
+                <div class="tree-item"><a class="tree-link" href="research.html#capstone">insider-threat-capstone.md</a></div>
+              </div>
+            </details>
+          </div>
+          <div class="tree-item">
+            <details open>
+              <summary><span class="folder-icon"></span>Work</summary>
+              <div class="tree-group">
+                <div class="tree-item"><a class="tree-link" href="wanderlust-lv.html">wanderlust-lv.md</a></div>
+                <div class="tree-item"><a class="tree-link" href="50-shades-of-green.html">50-shades-of-green.md</a></div>
+                <div class="tree-item"><a class="tree-link" href="enhanced-medical-billing.html">enhanced-medical-billing.md</a></div>
+              </div>
+            </details>
+          </div>
+          <div class="tree-item">
+            <details open>
+              <summary><span class="folder-icon"></span>Projects</summary>
+              <div class="tree-group">
+                <div class="tree-item"><a class="tree-link active" href="projects.html#scientific-rag">scientific-codebase-rag.md</a></div>
+                <div class="tree-item"><a class="tree-link active" href="projects.html#insider-threat">insider-threat-capstone.md</a></div>
+                <div class="tree-item"><a class="tree-link active" href="projects.html#tlslite">tls-lite-java.md</a></div>
+                <div class="tree-item"><a class="tree-link active" href="projects.html#dns-resolver">dns-resolver.md</a></div>
+                <div class="tree-item"><a class="tree-link active" href="projects.html#cosmic-cat">cosmic-cat-combat.md</a></div>
+              </div>
+            </details>
+          </div>
+        </div>
       </nav>
-    </header>
 
-    <main>
-      <section class="page-wide">
-        <p class="kicker">Projects</p>
-        <h1>Selected GitHub work, from RAG evaluation to systems fundamentals.</h1>
-        <p class="lede">
-          These projects are drawn from the public-projects repository READMEs. The cloned KernelPack dependency is intentionally excluded.
-        </p>
+      <footer class="navigator-footer">
+        <a href="https://github.com/jorbers">github.com/jorbers</a>
+      </footer>
+    </aside>
 
-        <article class="project">
-          <h2>Scientific Codebase RAG</h2>
-          <p class="meta">Python, notebooks, code retrieval, scientific computing, RAG evaluation</p>
+    <section class="file">
+      <header class="file-header">
+        <button class="icon-button sidebar-toggle title-sidebar-button" type="button" aria-label="Toggle file tree" aria-controls="navigator"><span aria-hidden="true">||</span></button>
+        <h1>Projects</h1>
+        <a class="header-link" href="https://github.com/jorbers">GitHub</a>
+      </header>
+
+      <main class="document">
+        <div class="line-rail" aria-hidden="true"></div>
+        <article class="content-area">
+          <p class="eyebrow">Projects/</p>
+          <h2>Selected GitHub work pulled from my public READMEs.</h2>
           <p>
-            An active research repository for retrieval-augmented generation over scientific software. The project studies why scientific code breaks generic RAG assumptions: users ask in mathematical language, code answers in APIs, and useful context often lives across functions, docstrings, and cross-references.
+            I like projects that expose the machinery underneath an idea. The work here ranges from retrieval evaluation to network protocol internals and game-state logic, but the shared thread is the same: I want to understand the system well enough to name what it can and cannot promise.
           </p>
-          <p>
-            Current experiments compare AST-aware chunking, code-aware embeddings, BM25 plus dense search, reciprocal rank fusion, and LLM-generated summaries. The roadmap moves toward Qdrant hybrid search, cross-encoder reranking, richer math metadata, and execution-grounded evaluation for coding agents.
-          </p>
-          <p class="links">
-            <a href="https://github.com/jorbers/scientific-codebase-rag">Repository</a>
-          </p>
-        </article>
 
-        <article class="project">
-          <div class="split">
-            <div>
-              <h2>Insider Threat Detection System</h2>
-              <p class="meta">Python, FastAPI, XGBoost, Isolation Forest, Vanilla JavaScript</p>
-              <p>
-                A Master of Software Development capstone project that detects malicious insider behavior in enterprise activity logs. The pipeline ingests raw CERT dataset logs, engineers daily behavioral features, simulates time day by day, and fuses four detector outputs into analyst-facing alerts.
-              </p>
-              <p>
-                The project emphasizes measured trust: supervised detection, forecast warning, rules, anomaly detection, ensemble weighting, and a dashboard that explains why a user escalated instead of presenting a black-box score.
-              </p>
-              <p class="links">
-                <a href="https://github.com/jorbers/capstone_6019">Repository</a>
-              </p>
-            </div>
+          <section id="scientific-rag" class="document-section">
+            <h3>scientific-codebase-rag.md</h3>
+            <p class="meta">Python / notebooks / code retrieval / scientific computing</p>
+            <p>
+              This is my active research repository for retrieval-augmented generation over scientific software. I use it to study why scientific code breaks generic RAG assumptions: users ask in mathematical language, code answers in APIs, and useful context may live across functions, docstrings, and cross-references.
+            </p>
+            <p>
+              The repository currently tracks chunking experiments, embedding choices, hybrid BM25 plus dense search, reciprocal rank fusion, and summary enrichment. The roadmap moves toward Qdrant hybrid search, cross-encoder reranking, richer math metadata, and execution-grounded evaluation for coding agents.
+            </p>
+            <p class="links"><a href="https://github.com/jorbers/scientific-codebase-rag">Repository</a></p>
+          </section>
+
+          <section id="insider-threat" class="document-section">
+            <h3>insider-threat-capstone.md</h3>
+            <p class="meta">Python / FastAPI / XGBoost / Isolation Forest / Vanilla JavaScript</p>
+            <p>
+              This capstone detects malicious insider behavior in enterprise activity logs. I worked on a pipeline that ingests raw CERT dataset logs, engineers daily behavioral features, simulates time day by day, and fuses detector outputs into alerts that an analyst can inspect.
+            </p>
             <figure>
               <img src="capstone-dashboard.png" alt="Dashboard from the insider threat detection project.">
               <figcaption>Dashboard view from the capstone detection system.</figcaption>
             </figure>
-          </div>
-        </article>
+            <p>
+              The project matters to me because it treats explainability as part of the product surface. A suspicious score is not enough; the dashboard needs to show which signals fired, how the timeline changed, and why the escalation deserves attention.
+            </p>
+            <p class="links"><a href="https://github.com/jorbers/insider-threat-capstone">Repository</a></p>
+          </section>
 
-        <article class="project">
-          <div class="split">
-            <div>
-              <h2>TLSlite</h2>
-              <p class="meta">Java, TCP sockets, Diffie-Hellman, HKDF, AES-CBC, HMAC</p>
-              <p>
-                A simplified TLS-like protocol implementation built for learning the mechanics of authenticated key exchange and encrypted messaging. The client and server perform mutual certificate authentication, ephemeral Diffie-Hellman key exchange, HKDF-based session key derivation, transcript HMAC checks, and authenticated encrypted messages over TCP.
-              </p>
-              <p>
-                The README is explicit about the project's limits, including static IV reuse, missing DH public-key validation, timing-unsafe HMAC comparison, and no production-grade certificate chain validation. That honesty is part of the point: security work has to name what is not protected.
-              </p>
-              <p class="links">
-                <a href="https://github.com/jorbers/tls-lite-java">Repository</a>
-              </p>
-            </div>
+          <section id="tlslite" class="document-section">
+            <h3>tls-lite-java.md</h3>
+            <p class="meta">Java / TCP sockets / Diffie-Hellman / HKDF / AES-CBC / HMAC</p>
+            <p>
+              TLSlite is a simplified TLS-like protocol implementation built so I could learn the mechanics of authenticated key exchange and encrypted messaging. The client and server perform mutual certificate authentication, ephemeral Diffie-Hellman key exchange, HKDF-based session key derivation, transcript HMAC checks, and authenticated encrypted messages over TCP.
+            </p>
             <figure>
               <img src="tls-handshake.svg" alt="Handshake sequence diagram from the TLSlite project.">
               <figcaption>Handshake sequence from the TLSlite documentation.</figcaption>
             </figure>
-          </div>
-        </article>
+            <p>
+              The README is explicit about the project limits, including static IV reuse, missing DH public-key validation, timing-unsafe HMAC comparison, and no production-grade certificate chain validation. I left those caveats visible because security work should say exactly where the protection stops.
+            </p>
+            <p class="links"><a href="https://github.com/jorbers/tls-lite-java">Repository</a></p>
+          </section>
 
-        <article class="project">
-          <div class="split">
-            <div>
-              <h2>DNS Resolver</h2>
-              <p class="meta">Java, UDP networking, RFC 1035 parsing, TTL-aware caching</p>
-              <p>
-                A local DNS forwarding resolver that listens for UDP queries, parses RFC 1035 wire-format messages, handles compressed domain-name pointers, checks an in-memory TTL-aware cache, and forwards cache misses to Google Public DNS.
-              </p>
-              <p>
-                The implementation covers DNS packet construction, bit-level header flag extraction, custom cache-key equality, record expiration, and response generation. It also documents concrete limitations, including single-threaded handling, no TCP fallback, no DNSSEC, and volatile cache state.
-              </p>
-              <p class="links">
-                <a href="https://github.com/jorbers/dns-resolver">Repository</a>
-              </p>
-            </div>
+          <section id="dns-resolver" class="document-section">
+            <h3>dns-resolver.md</h3>
+            <p class="meta">Java / UDP networking / RFC 1035 parsing / TTL-aware caching</p>
+            <p>
+              This resolver listens for UDP queries, parses DNS wire-format messages, handles compressed domain-name pointers, checks an in-memory TTL-aware cache, and forwards cache misses to Google Public DNS. It was a useful way to turn a protocol that usually feels invisible into bytes I could inspect and construct.
+            </p>
             <figure>
-              <img src="dns-cache-hit.png" alt="Terminal output showing a DNS cache hit example.">
-              <figcaption>Cache-hit example from the resolver documentation.</figcaption>
+              <img src="cache-miss-github.png" alt="Terminal output showing a DNS cache miss.">
+              <img src="cache-hit-github.png" alt="Terminal output showing a DNS cache hit.">
+              <figcaption>Cache-miss vs cache-hit example from the resolver.</figcaption>
             </figure>
-          </div>
-        </article>
+            <p>
+              The implementation covers packet construction, bit-level header flags, cache-key equality, record expiration, and response generation. It also documents practical limits such as single-threaded handling, no TCP fallback, no DNSSEC validation, volatile cache state, and a hard-coded upstream resolver.
+            </p>
+            <p class="links"><a href="https://github.com/jorbers/dns-resolver">Repository</a></p>
+          </section>
 
-        <article class="project">
-          <div class="split">
-            <div>
-              <h2>Cosmic Cat Combat</h2>
-              <p class="meta">C++, Qt, QGraphicsScene, Qt Multimedia, game-state logic</p>
-              <p>
-                A Qt/C++ fixed shooter with sprite-based rendering, focused keyboard input, timer-driven projectile movement, collision detection, local profiles, scoreboard navigation, and multimedia cues.
-              </p>
-              <p>
-                The game is also a study in state management. The boss character moves through peek, retreat, monologue, attack, victory, and defeat phases; the player loop coordinates health, projectiles, replay flow, and screen transitions through a stacked-widget Qt interface.
-              </p>
-              <p class="links">
-                <a href="https://github.com/jorbers/cosmic-cat-combat">Repository</a>
-              </p>
-            </div>
+          <section id="cosmic-cat" class="document-section">
+            <h3>cosmic-cat-combat.md</h3>
+            <p class="meta">C++ / Qt / QGraphicsScene / Qt Multimedia / game-state logic</p>
+            <p>
+              Cosmic Cat Combat is a Qt/C++ fixed shooter with sprite rendering, focused keyboard input, timer-driven projectile movement, collision detection, local profiles, scoreboard navigation, and multimedia cues. It is playful on the surface and very practical underneath.
+            </p>
             <figure>
-              <img src="cosmic-cat-gameplay.png" alt="Gameplay screenshot from Cosmic Cat Combat.">
+              <img src="CCC-win-lose-gameplay.gif" alt="Gameplay from Cosmic Cat Combat.">
               <figcaption>Gameplay view from the Qt/C++ arcade project.</figcaption>
             </figure>
-          </div>
+            <p>
+              The boss character moves through peek, retreat, monologue, attack, victory, and defeat phases while the player loop coordinates health, projectiles, replay flow, and screen transitions through a stacked-widget Qt interface. It was a compact lesson in keeping game state legible.
+            </p>
+            <p class="links"><a href="https://github.com/jorbers/cosmic-cat-combat">Repository</a></p>
+          </section>
         </article>
-      </section>
-    </main>
+      </main>
 
-    <footer class="site-footer">
-      <p>Jordan Chambers / <a href="https://github.com/jorbers">github.com/jorbers</a></p>
-    </footer>
+      <footer class="content-footer">
+        <span>Projects</span>
+        <span>5 files</span>
+      </footer>
+    </section>
+
+    <script src="site.js"></script>
   </body>
 </html>

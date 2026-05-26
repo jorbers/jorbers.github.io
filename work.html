@@ -3,67 +3,86 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Client website work by Jordan Chambers.">
-    <title>Client Work / Jordan Chambers</title>
+    <meta name="description" content="Client website work for Las Vegas businesses.">
+    <title>Work / Jordan Chambers</title>
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <header class="site-header">
-      <p class="site-title"><a href="index.html">Jordan Chambers</a></p>
-      <nav class="nav" aria-label="Primary navigation">
-        <a href="index.html">About</a>
-        <a href="research.html">Research</a>
-        <a href="projects.html">Projects</a>
-        <a href="work.html" aria-current="page">Client work</a>
-        <a href="https://github.com/jorbers">GitHub</a>
+    <aside class="navigator" id="navigator" aria-label="File tree">
+      <header class="navigator-header">
+        <a class="workspace-name" href="index.html">jorbers.github.io</a>
+        <button class="icon-button sidebar-toggle" type="button" aria-label="Collapse file tree" aria-controls="navigator"><span aria-hidden="true">|</span></button>
+      </header>
+
+      <nav class="tree">
+        <div class="tree-group">
+          <div class="tree-item"><a class="tree-link root-file" href="index.html"><span class="file-icon">md</span><span>README</span></a></div>
+          <div class="tree-item">
+            <details open>
+              <summary><span class="folder-icon"></span>Research</summary>
+              <div class="tree-group">
+                <div class="tree-item"><a class="tree-link" href="research.html#rag-work">scientific-codebase-rag.md</a></div>
+                <div class="tree-item"><a class="tree-link" href="research.html#capstone">insider-threat-capstone.md</a></div>
+              </div>
+            </details>
+          </div>
+          <div class="tree-item">
+            <details open>
+              <summary><span class="folder-icon"></span>Work</summary>
+              <div class="tree-group">
+                <div class="tree-item"><a class="tree-link" href="wanderlust-lv.html">wanderlust-lv.md</a></div>
+                <div class="tree-item"><a class="tree-link" href="50-shades-of-green.html">50-shades-of-green.md</a></div>
+                <div class="tree-item"><a class="tree-link" href="enhanced-medical-billing.html">enhanced-medical-billing.md</a></div>
+              </div>
+            </details>
+          </div>
+          <div class="tree-item">
+            <details open>
+              <summary><span class="folder-icon"></span>Projects</summary>
+              <div class="tree-group">
+                <div class="tree-item"><a class="tree-link" href="projects.html#scientific-rag">scientific-codebase-rag.md</a></div>
+                <div class="tree-item"><a class="tree-link" href="projects.html#insider-threat">insider-threat-capstone.md</a></div>
+                <div class="tree-item"><a class="tree-link" href="projects.html#tlslite">tls-lite-java.md</a></div>
+                <div class="tree-item"><a class="tree-link" href="projects.html#dns-resolver">dns-resolver.md</a></div>
+                <div class="tree-item"><a class="tree-link" href="projects.html#cosmic-cat">cosmic-cat-combat.md</a></div>
+              </div>
+            </details>
+          </div>
+        </div>
       </nav>
-    </header>
 
-    <main>
-      <section class="page">
-        <p class="kicker">Client work</p>
-        <h1>Paid website work for Las Vegas businesses.</h1>
-        <p class="lede">
-          Alongside research and engineering projects, Jordan has built client sites for local businesses, translating real business constraints into public-facing web presences.
-        </p>
+      <footer class="navigator-footer">
+        <a href="https://github.com/jorbers">github.com/jorbers</a>
+      </footer>
+    </aside>
 
-        <article class="work-item">
-          <h2>Wanderlust LV Event Venue</h2>
-          <p class="meta">Small business group / Las Vegas event venue</p>
+    <section class="file">
+      <header class="file-header">
+        <button class="icon-button sidebar-toggle title-sidebar-button" type="button" aria-label="Toggle file tree" aria-controls="navigator"><span aria-hidden="true">||</span></button>
+        <h1>Work</h1>
+        <a class="header-link" href="index.html">README</a>
+      </header>
+
+      <main class="document">
+        <div class="line-rail" aria-hidden="true"></div>
+        <article class="content-area">
+          <p class="eyebrow">Work/</p>
+          <h2>Client sites for Las Vegas businesses.</h2>
           <p>
-            A client website for a Las Vegas event venue, built to present the venue clearly to prospective guests and event organizers.
+            I have built small-business websites where the job is less about novelty and more about clarity. A good client site should answer the obvious questions quickly, make contact feel easy, and stay maintainable after the first launch excitement wears off.
           </p>
-          <p class="links">
-            <a href="https://wanderlustlv.com">wanderlustlv.com</a>
+          <p>
+            Each client project now lives in its own file in the Work folder. Open <a href="wanderlust-lv.html">wanderlust-lv.md</a>, <a href="50-shades-of-green.html">50-shades-of-green.md</a>, or <a href="enhanced-medical-billing.html">enhanced-medical-billing.md</a> from the sidebar to see the dedicated document view.
           </p>
         </article>
+      </main>
 
-        <article class="work-item">
-          <h2>50 Shades of Green Catering</h2>
-          <p class="meta">Small business group / Las Vegas catering company</p>
-          <p>
-            A client website for a catering business connected to the same Las Vegas small business group, focused on making the service offering easy to understand and contact.
-          </p>
-          <p class="links">
-            <a href="https://50shadesofgreenlv.com">50shadesofgreenlv.com</a>
-          </p>
-        </article>
+      <footer class="content-footer">
+        <span>Work</span>
+        <span>client sites</span>
+      </footer>
+    </section>
 
-        <article class="work-item">
-          <h2>Enhanced Medical Billing</h2>
-          <p class="meta">Medical billing company / Las Vegas</p>
-          <p>
-            A professional services website for a Las Vegas medical billing company, balancing credibility, clarity, and straightforward navigation for a specialized audience.
-          </p>
-          <p class="links">
-            <a href="https://enhancedmedicalbilling.net">enhancedmedicalbilling.net</a>
-          </p>
-        </article>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <p>Jordan Chambers / <a href="https://github.com/jorbers">github.com/jorbers</a></p>
-    </footer>
+    <script src="site.js"></script>
   </body>
 </html>
