@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Research by Jordan Chambers on trustworthy RAG, scientific computing, and anomaly detection.">
+    <title>Research / Jordan Chambers</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <p class="site-title"><a href="index.html">Jordan Chambers</a></p>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="index.html">About</a>
+        <a href="research.html" aria-current="page">Research</a>
+        <a href="projects.html">Projects</a>
+        <a href="work.html">Client work</a>
+        <a href="https://github.com/jorbers">GitHub</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="page-wide">
+        <p class="kicker">Research</p>
+        <h1>Evaluating whether AI systems are equipped to make the decisions they appear to make.</h1>
+        <p class="lede">
+          Jordan's research asks how to make trust operational. The answer, so far, is to build systems whose claims can be checked against source material, behavioral evidence, and measurable outcomes.
+        </p>
+
+        <article class="research-item">
+          <div class="split">
+            <div>
+              <h2>Scientific codebase RAG</h2>
+              <p class="meta">Current work / University of Utah / Retrieval-augmented generation for scientific computing libraries</p>
+              <p>
+                The current research target is RAG for scientific codebases, using KernelPack, a Python library for RBF-FD numerical methods, as the primary testbed. Scientific code retrieval has a failure mode that generic code RAG does not handle well: the user may ask in mathematical language while the codebase answers in API names, implementation details, and cross-references.
+              </p>
+              <p>
+                Jordan frames this as a trimodal retrieval problem. A good system has to retrieve code, mathematical meaning, and related implementation context at the same time. A query like "4th-order Laplacian" is not just a text search problem; it may require connecting numerical vocabulary to a class, a factory method, an operator name, and the function that assembles the solver.
+              </p>
+              <p>
+                Early experiments compare chunking strategies, code-aware embeddings, BM25 plus dense retrieval, reciprocal rank fusion, and LLM-generated source summaries. The current finding is useful because it is specific: after summary enrichment, expected chunks often appear in the top-10 neighborhood, but not reliably in the top-3. That makes ranking, not raw recall, the next bottleneck.
+              </p>
+              <p>
+                Next steps include a Qdrant migration, richer metadata for math terms and cross-references, hierarchical "retrieve small, read big" context expansion, and cross-encoder reranking.
+              </p>
+              <p class="links">
+                <a href="https://github.com/jorbers/scientific-codebase-rag">Repository</a>
+              </p>
+            </div>
+            <aside class="note">
+              <h3>Research standard</h3>
+              <p>
+                Retrieval changes are treated as hypotheses. They need baselines, recall@k, query sets, and later faithfulness and execution checks before they count as progress.
+              </p>
+            </aside>
+          </div>
+        </article>
+
+        <article class="research-item">
+          <h2>Two RAG directions</h2>
+          <p>
+            The shared retrieval foundation supports two interfaces. The first is a coding-agent RAG layer that constrains AI assistants to retrieved source context so they do not invent functions, classes, or arguments. The second is a citizen-science RAG interface that translates plain-language simulation goals into grounded starter code for users who do not already know the solver vocabulary.
+          </p>
+          <p>
+            These projects diverge at the generation and interface layers, but they share the same evaluation premise: a system should not be trusted because it sounds fluent. It should be trusted only when retrieval, grounding, and execution behavior can be measured.
+          </p>
+        </article>
+
+        <article class="research-item">
+          <div class="split">
+            <div>
+              <h2>MSD capstone: insider threat detection</h2>
+              <p class="meta">Machine learning capstone / CERT Insider Threat Dataset / behavioral activity logs</p>
+              <p>
+                Jordan's capstone work built a multi-detector ensemble for identifying malicious insider behavior in enterprise activity logs. The system transforms logon, device, file, HTTP, email, and LDAP data into daily user features, then evaluates rolling 14-day windows with four independent detection strategies.
+              </p>
+              <p>
+                The ensemble combines an XGBoost active-exfiltration detector, an XGBoost forecast detector for pre-exfiltration warning, deterministic rules for high-confidence event chains, and an Isolation Forest anomaly baseline normalized by personal and peer-group behavior. A logistic ensemble fuses those signals so noisy anomaly alerts support, rather than dominate, escalation.
+              </p>
+              <p>
+                On the held-out Scenario 1 test split, the active detector reached 1.000 ROC-AUC and 0.970 average precision at the window level, with zero false positives at the default threshold. The forecast model caught 2 of 3 test-set insiders before exfiltration began, with 1 to 9 days of lead time. The ensemble comparison also showed why evaluation matters: letting anomaly scores dominate collapsed performance, while the weighted ensemble preserved precision.
+              </p>
+              <p class="links">
+                <a href="https://github.com/jorbers/capstone_6019">Repository</a>
+              </p>
+            </div>
+            <figure>
+              <img src="capstone-dashboard.png" alt="Dashboard view from the insider threat detection capstone.">
+              <figcaption>Analyst dashboard from the capstone system, designed to separate high-confidence escalation from background anomaly noise.</figcaption>
+            </figure>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Jordan Chambers / <a href="https://github.com/jorbers">github.com/jorbers</a></p>
+    </footer>
+  </body>
+</html>

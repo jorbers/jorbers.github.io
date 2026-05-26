@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Selected GitHub projects by Jordan Chambers.">
+    <title>Projects / Jordan Chambers</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <p class="site-title"><a href="index.html">Jordan Chambers</a></p>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="index.html">About</a>
+        <a href="research.html">Research</a>
+        <a href="projects.html" aria-current="page">Projects</a>
+        <a href="work.html">Client work</a>
+        <a href="https://github.com/jorbers">GitHub</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="page-wide">
+        <p class="kicker">Projects</p>
+        <h1>Selected GitHub work, from RAG evaluation to systems fundamentals.</h1>
+        <p class="lede">
+          These projects are drawn from the public-projects repository READMEs. The cloned KernelPack dependency is intentionally excluded.
+        </p>
+
+        <article class="project">
+          <h2>Scientific Codebase RAG</h2>
+          <p class="meta">Python, notebooks, code retrieval, scientific computing, RAG evaluation</p>
+          <p>
+            An active research repository for retrieval-augmented generation over scientific software. The project studies why scientific code breaks generic RAG assumptions: users ask in mathematical language, code answers in APIs, and useful context often lives across functions, docstrings, and cross-references.
+          </p>
+          <p>
+            Current experiments compare AST-aware chunking, code-aware embeddings, BM25 plus dense search, reciprocal rank fusion, and LLM-generated summaries. The roadmap moves toward Qdrant hybrid search, cross-encoder reranking, richer math metadata, and execution-grounded evaluation for coding agents.
+          </p>
+          <p class="links">
+            <a href="https://github.com/jorbers/scientific-codebase-rag">Repository</a>
+          </p>
+        </article>
+
+        <article class="project">
+          <div class="split">
+            <div>
+              <h2>Insider Threat Detection System</h2>
+              <p class="meta">Python, FastAPI, XGBoost, Isolation Forest, Vanilla JavaScript</p>
+              <p>
+                A Master of Software Development capstone project that detects malicious insider behavior in enterprise activity logs. The pipeline ingests raw CERT dataset logs, engineers daily behavioral features, simulates time day by day, and fuses four detector outputs into analyst-facing alerts.
+              </p>
+              <p>
+                The project emphasizes measured trust: supervised detection, forecast warning, rules, anomaly detection, ensemble weighting, and a dashboard that explains why a user escalated instead of presenting a black-box score.
+              </p>
+              <p class="links">
+                <a href="https://github.com/jorbers/capstone_6019">Repository</a>
+              </p>
+            </div>
+            <figure>
+              <img src="capstone-dashboard.png" alt="Dashboard from the insider threat detection project.">
+              <figcaption>Dashboard view from the capstone detection system.</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="split">
+            <div>
+              <h2>TLSlite</h2>
+              <p class="meta">Java, TCP sockets, Diffie-Hellman, HKDF, AES-CBC, HMAC</p>
+              <p>
+                A simplified TLS-like protocol implementation built for learning the mechanics of authenticated key exchange and encrypted messaging. The client and server perform mutual certificate authentication, ephemeral Diffie-Hellman key exchange, HKDF-based session key derivation, transcript HMAC checks, and authenticated encrypted messages over TCP.
+              </p>
+              <p>
+                The README is explicit about the project's limits, including static IV reuse, missing DH public-key validation, timing-unsafe HMAC comparison, and no production-grade certificate chain validation. That honesty is part of the point: security work has to name what is not protected.
+              </p>
+              <p class="links">
+                <a href="https://github.com/jorbers/tls-lite-java">Repository</a>
+              </p>
+            </div>
+            <figure>
+              <img src="tls-handshake.svg" alt="Handshake sequence diagram from the TLSlite project.">
+              <figcaption>Handshake sequence from the TLSlite documentation.</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="split">
+            <div>
+              <h2>DNS Resolver</h2>
+              <p class="meta">Java, UDP networking, RFC 1035 parsing, TTL-aware caching</p>
+              <p>
+                A local DNS forwarding resolver that listens for UDP queries, parses RFC 1035 wire-format messages, handles compressed domain-name pointers, checks an in-memory TTL-aware cache, and forwards cache misses to Google Public DNS.
+              </p>
+              <p>
+                The implementation covers DNS packet construction, bit-level header flag extraction, custom cache-key equality, record expiration, and response generation. It also documents concrete limitations, including single-threaded handling, no TCP fallback, no DNSSEC, and volatile cache state.
+              </p>
+              <p class="links">
+                <a href="https://github.com/jorbers/dns-resolver">Repository</a>
+              </p>
+            </div>
+            <figure>
+              <img src="dns-cache-hit.png" alt="Terminal output showing a DNS cache hit example.">
+              <figcaption>Cache-hit example from the resolver documentation.</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="split">
+            <div>
+              <h2>Cosmic Cat Combat</h2>
+              <p class="meta">C++, Qt, QGraphicsScene, Qt Multimedia, game-state logic</p>
+              <p>
+                A Qt/C++ fixed shooter with sprite-based rendering, focused keyboard input, timer-driven projectile movement, collision detection, local profiles, scoreboard navigation, and multimedia cues.
+              </p>
+              <p>
+                The game is also a study in state management. The boss character moves through peek, retreat, monologue, attack, victory, and defeat phases; the player loop coordinates health, projectiles, replay flow, and screen transitions through a stacked-widget Qt interface.
+              </p>
+              <p class="links">
+                <a href="https://github.com/jorbers/cosmic-cat-combat">Repository</a>
+              </p>
+            </div>
+            <figure>
+              <img src="cosmic-cat-gameplay.png" alt="Gameplay screenshot from Cosmic Cat Combat.">
+              <figcaption>Gameplay view from the Qt/C++ arcade project.</figcaption>
+            </figure>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Jordan Chambers / <a href="https://github.com/jorbers">github.com/jorbers</a></p>
+    </footer>
+  </body>
+</html>

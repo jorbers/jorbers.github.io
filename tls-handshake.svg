@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="680" height="618" viewBox="0 0 680 618" xmlns="http://www.w3.org/2000/svg"
+     font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <title>TLSlite Handshake Sequence</title>
+  <desc>12-step TLS-like handshake between client and server</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="680" height="618" fill="#ffffff" rx="8"/>
+
+  <!-- Client header -->
+  <rect x="20" y="14" width="130" height="40" rx="8" fill="#ddf4ff" stroke="#54aeff" stroke-width="0.5"/>
+  <text x="85" y="34" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#0550ae">Client</text>
+
+  <!-- Server header -->
+  <rect x="530" y="14" width="130" height="40" rx="8" fill="#ddf4ff" stroke="#54aeff" stroke-width="0.5"/>
+  <text x="595" y="34" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#0550ae">Server</text>
+
+  <!-- Lifelines -->
+  <line x1="85" y1="54" x2="85" y2="580" stroke="#d0d7de" stroke-width="0.5" stroke-dasharray="4 4"/>
+  <line x1="595" y1="54" x2="595" y2="580" stroke="#d0d7de" stroke-width="0.5" stroke-dasharray="4 4"/>
+
+  <!-- ── Phase 1: Authentication ── -->
+  <line x1="95" y1="92" x2="283" y2="92" stroke="#d0d7de" stroke-width="0.5"/>
+  <text x="340" y="92" text-anchor="middle" dominant-baseline="central" font-size="11" fill="#57606a">Authentication</text>
+  <line x1="397" y1="92" x2="585" y2="92" stroke="#d0d7de" stroke-width="0.5"/>
+
+  <!-- Step 1: C→S Nonce -->
+  <text x="340" y="110" text-anchor="middle" font-size="11" fill="#57606a">Nonce (32 bytes)</text>
+  <line x1="89" y1="118" x2="589" y2="118" stroke="#0969da" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Step 2: S→C Server cert -->
+  <text x="340" y="145" text-anchor="middle" font-size="11" fill="#57606a">Server certificate</text>
+  <line x1="591" y1="153" x2="91" y2="153" stroke="#1a7f37" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Step 3: S→C DH public key -->
+  <text x="340" y="180" text-anchor="middle" font-size="11" fill="#57606a">Server DH public key</text>
+  <line x1="591" y1="188" x2="91" y2="188" stroke="#1a7f37" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Step 4: S→C RSA signature -->
+  <text x="340" y="215" text-anchor="middle" font-size="11" fill="#57606a">RSA signature of DH key</text>
+  <line x1="591" y1="223" x2="91" y2="223" stroke="#1a7f37" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Step 5: C→S Client cert -->
+  <text x="340" y="250" text-anchor="middle" font-size="11" fill="#57606a">Client certificate</text>
+  <line x1="89" y1="258" x2="589" y2="258" stroke="#0969da" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Step 6: C→S Client DH public key -->
+  <text x="340" y="285" text-anchor="middle" font-size="11" fill="#57606a">Client DH public key</text>
+  <line x1="89" y1="293" x2="589" y2="293" stroke="#0969da" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Step 7: C→S RSA signature -->
+  <text x="340" y="320" text-anchor="middle" font-size="11" fill="#57606a">RSA signature of DH key</text>
+  <line x1="89" y1="328" x2="589" y2="328" stroke="#0969da" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- ── Phase 2: Key Derivation ── -->
+  <line x1="95" y1="350" x2="280" y2="350" stroke="#d0d7de" stroke-width="0.5"/>
+  <text x="340" y="350" text-anchor="middle" dominant-baseline="central" font-size="11" fill="#57606a">Key derivation</text>
+  <line x1="400" y1="350" x2="585" y2="350" stroke="#d0d7de" stroke-width="0.5"/>
+
+  <!-- Step 8: Both – Verify RSA sigs -->
+  <text x="340" y="368" text-anchor="middle" font-size="11" fill="#57606a">Verify RSA signatures (both)</text>
+  <rect x="79" y="376" width="12" height="14" rx="2" fill="#fff8c5" stroke="#d4a72c" stroke-width="0.5"/>
+  <rect x="589" y="376" width="12" height="14" rx="2" fill="#fff8c5" stroke="#d4a72c" stroke-width="0.5"/>
+  <line x1="93" y1="383" x2="587" y2="383" stroke="#d0d7de" stroke-width="0.5" stroke-dasharray="3 3"/>
+
+  <!-- Step 9: Both – HKDF -->
+  <text x="340" y="401" text-anchor="middle" font-size="11" fill="#57606a">DH shared secret &#x2192; HKDF &#x2192; 6 session keys</text>
+  <rect x="79" y="409" width="12" height="14" rx="2" fill="#fff8c5" stroke="#d4a72c" stroke-width="0.5"/>
+  <rect x="589" y="409" width="12" height="14" rx="2" fill="#fff8c5" stroke="#d4a72c" stroke-width="0.5"/>
+  <line x1="93" y1="416" x2="587" y2="416" stroke="#d0d7de" stroke-width="0.5" stroke-dasharray="3 3"/>
+
+  <!-- ── Phase 3: Transcript Verification ── -->
+  <line x1="95" y1="438" x2="248" y2="438" stroke="#d0d7de" stroke-width="0.5"/>
+  <text x="340" y="438" text-anchor="middle" dominant-baseline="central" font-size="11" fill="#57606a">Transcript verification</text>
+  <line x1="432" y1="438" x2="585" y2="438" stroke="#d0d7de" stroke-width="0.5"/>
+
+  <!-- Step 10: S→C HMAC -->
+  <text x="340" y="456" text-anchor="middle" font-size="11" fill="#57606a">HMAC over transcript</text>
+  <line x1="591" y1="464" x2="91" y2="464" stroke="#1a7f37" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Step 11: C→S HMAC -->
+  <text x="340" y="490" text-anchor="middle" font-size="11" fill="#57606a">HMAC over transcript</text>
+  <line x1="89" y1="498" x2="589" y2="498" stroke="#0969da" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- ── Phase 4: Encrypted Messaging ── -->
+  <line x1="95" y1="520" x2="262" y2="520" stroke="#d0d7de" stroke-width="0.5"/>
+  <text x="340" y="520" text-anchor="middle" dominant-baseline="central" font-size="11" fill="#57606a">Encrypted messaging</text>
+  <line x1="418" y1="520" x2="585" y2="520" stroke="#d0d7de" stroke-width="0.5"/>
+
+  <!-- Step 12: Bidirectional AES-CBC -->
+  <text x="340" y="538" text-anchor="middle" font-size="11" fill="#57606a">AES-CBC(msg &#x2016; HMAC)</text>
+  <line x1="89" y1="548" x2="589" y2="548" stroke="#0969da" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="591" y1="562" x2="91" y2="562" stroke="#1a7f37" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Legend -->
+  <line x1="95" y1="595" x2="122" y2="595" stroke="#0969da" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="128" y="595" dominant-baseline="central" font-size="11" fill="#57606a">Client &#x2192; Server</text>
+  <line x1="248" y1="595" x2="275" y2="595" stroke="#1a7f37" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="281" y="595" dominant-baseline="central" font-size="11" fill="#57606a">Server &#x2192; Client</text>
+  <line x1="403" y1="595" x2="424" y2="595" stroke="#d0d7de" stroke-width="0.5" stroke-dasharray="3 3"/>
+  <rect x="424" y="590" width="8" height="10" rx="1" fill="#fff8c5" stroke="#d4a72c" stroke-width="0.5"/>
+  <text x="438" y="595" dominant-baseline="central" font-size="11" fill="#57606a">Local computation</text>
+</svg>
